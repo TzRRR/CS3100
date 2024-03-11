@@ -1,0 +1,23 @@
+\problem{Problem 1: Stranger Things}
+
+The town of Hawkins, Indiana is being overrun by interdimensional beings called Demogorgons. The Hawkins lab has developed a Demogorgon Defense Device (DDD) to help protect the town. The DDD continuously monitors the inter-dimensional ether to perfectly predict all future Demogorgon invasions.
+
+The DDD allows Hawkins to predict that $i$ days from now $a_i$ Demogorgons will attack. The DDD has a laser that is able to eliminate Demogorgons, but the device takes time to charge.  In general, charging the laser for $j$ days will allow it to eliminate $c_j$ Demogorgons (it is not necessarily the case that the $c_j$ values are increasing). Demogorgon attacks and therefore laser activation will always happen at the end of the day, so when activating we consider that day's charging to occur before the activation.
+
+\paragraph{Example:} Suppose $(a_1, a_2, a_3, a_4) = (1, 10, 10, 1)$ and $(c_1, c_2, c_3, c_4) = (1,2,4,8)$. The best solution is to activate the laser on days 3 and 4 in order to eliminate $5$ Demogorgons.
+
+\begin{enumerate}
+    \item Construct an instance of the problem on which the following ``greedy'' algorithm returns the wrong answer:
+    \begin{align*}
+        \mathtt{BADLASER}&((a_1, a_2, a_3, \ldots , a_n), (c_1, c_2, c_3, , \ldots, c_n)): \\
+        & \text{Compute the smallest $j$ such that $c_j \geq  a_n$, Set $j = n$ if no such $j$ exists} \\
+        & \text{Shoot the laser at time $n$}\\
+        & \text{if $n > j$ then $\mathtt{BadLaser}((a_1, \ldots , a_{n - j}), (c_1, . . . , c_{n-j}))$}
+    \end{align*}
+    
+    Intuitively, the algorithm figures out how many days ($j$) are needed to eliminate all the Demogorgons in the last time slot. It activates during that last time slot, and then accounts for the $j$ days required to recharge for that last slot, and recursively considers the best solution for the smaller problem of size $n-j$. In the example, we will charge for 1 day to eliminate the demogorgon who arrives on day 4, and charge for 3 days before that to eliminate 4 of the 10 Demogorgons that arrive on day 3.
+    
+    \vspace{96pt}
+    
+    \item Given an array holding $a_i$ and $c_j$, devise a dynamic programming algorithm that eliminates the maximum number of Demogorgons. Provide and justify the running time of your solution.
+\end{enumerate}

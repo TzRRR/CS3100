@@ -1,0 +1,51 @@
+\problem{Problem 3: Facebook Trolling}
+
+People love being smug on Facebook. I've seen a lot of posts on Facebook (mostly posted by Aunts and Uncles) who try to trip people up with ambiguous arithmetic expressions. For example, my Aunt once posted ``90\% of Millenials will get this wrong! $4-3+2=?$'' in hopes that I'd choose to evaluate this as $(4-3)+2$ and answer $3$ so that she could counter with ``No! PEMDAS! The answer is $-1$'', alluding to the (faulty, in my opinion) order of operations taught in school suggesting that addition always be done before subtraction, obtaining $4-(3+2)=-1$. Inspired by my Aunt's facebook trolling, I want to determine, for some parentheses-free arithmetic expression, the ``facebook-worthiness'' of that expression. We will say that its facebook-worthiness is the distance between the maximum value and minimum value the expression could evaluate to by changing the order of operations. For instance, my Aunt's expression would have a facebook-worthiness of $4$ since $3-(-1)=4$.
+
+You are given an arithmetic expression containing $n$ integers and the only operations are additions ($+$)
+and subtractions ($-$). There are no parenthesis in the expression. For example, the expression might be: $1 + 2 - 3 - 4 - 5 + 6$.
+
+You can change the value of the expression by choosing the order of operations:
+\begin{align*}
+  ((((1 + 2) - 3) - 4) - 5) + 6 &= -3 \\
+  (((1 + 2) - 3) - 4) - (5 + 6) &= -15\\
+  ((1 + 2) - ((3 - 4) - 5)) + 6 &= 15
+\end{align*}
+
+
+Give a {\bf dynamic programming} algorithm that
+computes the maximum and minimum possible values of the expression to find its facebook-worthiness. You may assume that
+the input consists of two arrays: \texttt{nums} which
+is the list of $n$ integers and
+\texttt{ops} which is the list of $n - 1$ operations
+(each entry in \texttt{ops} is either \texttt{`+'}
+or \texttt{`-'}), where \texttt{ops[0]} is the operation
+between \texttt{nums[0]} and \texttt{nums[1]}.
+The running time of your algorithm should be $O(n^3)$.
+{\bf Hint:} Use a similar strategy to our algorithm for matrix chain multiplication.
+
+
+\paragraph{Recursive Structure.}
+
+Identify the optimal substructure for this problem. This should make it clear what choices are available for solving a large problem and which subproblems result from each choice.
+
+%TODO: Provide recursive structure of your algorithm
+
+
+\paragraph{Memory.}
+
+Describe the structure of the memory you'll be using to keep track of solutions to subproblems. Be sure to mention, asymptotically, the size of this memory.
+
+%TODO: Describe memory your algorithm will use
+
+\paragraph{Algorithm.}
+
+Describe your dynamic programming algorithm using the recursive structure and the memory you provided above.
+
+%TODO: Describe your algorithm
+
+\paragraph{Running Time.}
+
+Analyze, asymptotically, the worst-case running time of your algorithm.
+
+%TODO: Provide and justify the running time of your algorithm

@@ -1,0 +1,49 @@
+
+\problem{Problem 2: Dog Walking}
+
+\directions{Nate's dog, Bucky, loves other dogs. He loves them so much that whenever he sees one he feels that he MUST meet it. The problem is that the way he expresses this is by barking hysterically, which frightens the other dogs. Nate and his neighbor both want to walk their dogs from their houses to a different park at the same time. To keep all dogs happy they want to ensure that when they are walking their dogs they do not want their dogs to see each other. Help Nate and his neighbor find the shortest paths from their homes to their parks such that the dogs will not see each other.
+
+Your algorithm will be given an undirected, unweighted graph of the neighborhood that contains $n$ nodes. This graph will contain two "house" nodes (call these $H_{nate}$ and $H_{neigh}$ for Nate's house and his neighbor's house respectively) and two "park" nodes (called $P_{nate}$ and $P_{neigh}$). The remaining $n-4$ nodes will be intersections, and the edges will represent streets. As aoutput, it should give a shortest pair of schedules (one from $H_{nate}$ to $P_{nate}$ and the other from $H_{neigh}$ to $P_{neigh}$) that satisfies the following:
+\begin{itemize}
+    \item At each step in the schedule you can either stay in the same node as the step prior, or else move to an adjacent node.
+    \item Someone may return to a node they've already been in.
+    \item There cannot exist a time in the schedules where nate and his neighbor are in the same node or in adjacent nodes.
+\end{itemize}
+
+For example, suppose we are given the graph shown in Figure~\ref{fig:graph}.
+
+
+\begin{figure}[H]
+    \centering
+    $
+\xygraph{
+!~-{@{-}@[|(2.5)]}
+ & & *++{H_{nate}}="0" *\frm{o} & \\ 
+*++{A}="1"*\frm{o} & *++{H_{neigh}}="2"*\frm{o} & *++{B}="3"*\frm{o} & *++{P_{neigh}}="4"*\frm{o}\\
+& & *++{C}="5" *\frm{o} & \\
+& & *++{P_{nate}}="6" *\frm{o} & 
+"0"-"3" "1"-"2" "2"-"3" "3"-"4" "3"-"5" "5"-"6"
+} 
+$
+    \caption{ Nate starts at vertex $H_{nate}$ and must get to vertex $P_{nate}$. Lorelai starts at vertex $H_{neigh}$ and must get to vertex $P_{neigh}$.}
+    \label{fig:graph}
+\end{figure}
+
+In this case, the shortest schedule would be:
+
+\begin{center}
+\begin{tabular}{r|c c c c c}
+    & Step 1 & Step 2 & Step 3 & Step 4 & Step 5 \\
+    \hline
+    Nate:& $H_{nate}$ & $B$ & $C$ & $P_{nate}$  & $P_{neigh}$\\
+     Neighbor: & $H_{neigh}$ & $A$ & $H_{neigh}$ & $B$ & $P_{neigh}$
+\end{tabular}
+\end{center}
+
+The worst case running time of your algorithm should be $O(n^4)$.}
+
+\paragraph{Algorithm} TODO: Provide a precise description of your algorithm here
+
+\paragraph{Correctness} TODO: Justify the correctness of your algorithm here (a formal proof is not necessary, just explain precisely why you believe your algorithm to be correct)
+
+\paragraph{Running Time} TODO: Give and justify a $\Theta$ bound on your algorithm's worst-case running time here (a formal proof is not necessary, just explain precisely why you believe your algorithm to have this running time).

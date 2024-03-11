@@ -1,0 +1,21 @@
+
+\problem{Problem 1: Martian Morels}
+\directions{
+\MakeUppercase{NEWSFLASH: subterranean humanoid race discovered on Mars!} 
+
+\noindent We've discovered Martians living in caves! Since they live underground, their cuisine heavily features of a variety of Martian mushrooms. The tastiest is the Martian Morel, said to be more delicious than any food on Earth. While many Martian Morels are safe for human consumption, one subspecies of the Martian Morel is deathly toxic to humans. To human eyes the edible and toxic varieties are indistinguishable, but the Martians may be capable of telling the difference. We're going to test this whether this is the case. Making this challenging, though, the Martian language is unlike any human languages, and the only words of their language we have learned so far are ``same'', ``different'', and ``uncertain''.
+
+We have $n$ samples of Martian morels $s_0, ..., s_{n-1}$ each of which are either edible or toxic (we don't know which for any). A Martian was given all $n^2$ possible (ordered) pairs of samples $(s_i, s_j)$. The Martian then decided whether each sample's mushrooms were (a) the same (both edible or both toxic), (b) different (one edible and one toxic), or (c) that the Martian was uncertain. (All pairs were tested, but not all have ``same'' or ``different'' decisions).
+
+At the end of the testing, the Martian decided that a total of $m$ pairs were ``same'' or ``different''. Give an algorithm that determines whether these set of $m$ decisions is consistent. A set of decisions is consistent if there is a way to label each sample $s_i$ with ``edible'' or ``toxic'' such that if the Martian indicated the pair $(s_i, s_j)$ was ``same'' our labels for $s_i,s_j$ match, and if the Martian indicated the pair $(s_i, s_j)$ was ``different'' our labels for $s_i,s_j$ differ. Your algorithm should run in time $O(m+n^2)$.}
+
+\paragraph{Input} A 2-d array with each cell containing either ``same'', ``different'' or ``uncertain'' representing the decision of the Martian for each pair.
+
+\paragraph{Output} A boolean indicating whether the given set of decisions is consistent.
+
+
+\paragraph{Algorithm} TODO: Provide a precise description of your algorithm here
+
+\paragraph{Correctness} TODO: Justify the correctness of your algorithm here (a formal proof is not necessary, just explain precisely why you believe your algorithm to be correct)
+
+\paragraph{Running Time} TODO: Give and justify a $\Theta$ bound on your algorithm's worst-case running time here (a formal proof is not necessary, just explain precisely why you believe your algorithm to have this running time).
